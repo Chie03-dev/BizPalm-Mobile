@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Bizpalm" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/primary</item>
+        <item name="android:windowBackground">@color/background</item>
+
+        <!-- Use grayscale palette -->
+        <item name="colorSurface">@color/background</item>
+        <item name="colorOnSurface">@color/primary</item>
+        <item name="colorSurfaceVariant">@color/secondary</item>
+        <item name="colorOnSurfaceVariant">@color/primary</item>
+        <item name="colorOutline">@color/gray</item>
+
+        <!-- Disable the Android 12+ Splash Screen icon -->
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="31">@android:color/transparent</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">@color/background</item>
+    </style>
+
+    <style name="Theme.Bizpalm" parent="Base.Theme.Bizpalm" />
+</resources>

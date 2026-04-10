@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bizpalm</string>
+    <string name="welcome_message">Welcome to Bizpalm</string>
+    <string name="sales_analytics">Sales Analytics</string>
+    <string name="sales_summary">Sales Summary</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="total_orders">Total Orders</string>
+    <string name="best_selling_products">Best Selling Products</string>
+    <string name="top_5_items">Top 5 items by quantity sold</string>
+    <string name="business_insights">Business Insights</string>
+    <string name="generating_insights">Generating business insights...</string>
+
+    <string name="analytics_help_title">About Sales Analytics</string>
+    <string name="analytics_help_intro">This page provides an AI-powered overview of your business performance and future projections.</string>
+    <string name="strategic_insights_help_title">About Strategic Insights</string>
+    <string name="strategic_insights_help_intro">This page visualizes deep performance trends and future demand forecasts using historical transaction data.</string>
+
+    <string name="help_performance_title">Revenue vs Profit (Descriptive)</string>
+    <string name="help_performance_desc">Visualizes the relationship between your total sales and actual earnings over time.</string>
+    <string name="help_performance_advanced"><b>Algorithm:</b> Time-Series Aggregation\n<b>Formula:</b> Daily Profit = Σ(Price - Cost) per day\nUses <b>Descriptive Analytics</b> to show historical trends and identify period-over-period growth.</string>
+
+    <string name="help_peak_hours_title">Peak Sales Hours (Diagnostic)</string>
+    <string name="help_peak_hours_desc">Shows when your business is most active during the day.</string>
+    <string name="help_peak_hours_advanced"><b>Algorithm:</b> Hourly Frequency Distribution\n<b>Logic:</b> Aggregates transaction timestamps into 24-hour bins. Uses <b>Diagnostic Analytics</b> to help you understand staffing needs and optimal operating hours.</string>
+
+    <string name="help_demand_forecast_title">Demand Forecast (Predictive)</string>
+    <string name="help_demand_forecast_desc">Predicts future sales volume for your top products.</string>
+    <string name="help_demand_forecast_advanced"><b>Algorithm:</b> Weighted Moving Average\n<b>Formula:</b> Fₜ₊₁ = (w₁Vₜ + w₂Vₜ₋₁ + w₃Vₜ₋₂) / Σw\nUses <b>Predictive Analytics</b> to estimate future inventory needs based on recent sales velocity and trends.</string>
+
+    <string name="help_volume_distribution_title">Sales Volume (Descriptive)</string>
+    <string name="help_volume_distribution_desc">Ranks your products by the total number of units sold.</string>
+    <string name="help_volume_distribution_advanced"><b>Algorithm:</b> Pareto Distribution Analysis\n<b>Logic:</b> Identifies the "Vital Few" products that drive the majority of your sales volume using <b>Descriptive Analytics</b>.</string>
+
+    <string name="toggle_advanced_view">Show Advanced Details</string>
+
+    <string name="help_financial_pulse_title">Financial Pulse (Descriptive)</string>
+    <string name="help_financial_pulse_desc">Calculates your Gross Profit and Average Margin. It summarizes what happened in your business recently.</string>
+    <string name="help_financial_pulse_advanced"><b>Algorithm:</b> Descriptive Aggregation\n<b>Formula:</b> Profit = Σ(Price - Cost)\n<b>Margin:</b> (Total Profit / Revenue) × 100\nThis module uses <b>Descriptive Analytics</b> to summarize historical raw data into something understandable.</string>
+
+    <string name="help_ai_consultant_title">AI Business Consultant (Diagnostic)</string>
+    <string name="help_ai_consultant_desc">Analyzes sales patterns and product relationships to provide actionable advice.</string>
+    <string name="help_ai_consultant_advanced"><b>Algorithm:</b> Pattern Recognition / Association Rules\n<b>Logic:</b> Analyzes the "Why" by looking for correlations between items and time periods. It uses <b>Diagnostic Analytics</b> to find the root cause of sales trends.</string>
+
+    <string name="help_strategic_insights_title">Strategic Insights (Predictive)</string>
+    <string name="help_strategic_insights_desc">Uses historical data to predict your future revenue and daily sales averages.</string>
+    <string name="help_strategic_insights_advanced"><b>Algorithm:</b> Linear Regression / Time Series Analysis\n<b>Formula:</b> ŷ = mx + b (Trend Projection)\nUses <b>Predictive Analytics</b> to forecast future outcomes based on historical patterns and seasonality.</string>
+
+    <string name="help_restock_recommendations_title">Restock Recommendations (Prescriptive)</string>
+    <string name="help_restock_recommendations_desc">Identifies low-stock items that are high-priority based on their sales velocity.</string>
+    <string name="help_restock_recommendations_advanced"><b>Algorithm:</b> Inventory Optimization\n<b>Formula:</b> ROP = (Average Daily Sales × Lead Time) + Safety Stock\nUses <b>Prescriptive Analytics</b> to suggest a specific course of action to prevent stockouts.</string>
+
+    <string name="user_manual_intro">Bizpalm is your AI-powered business management companion. This guide explains our modules and how our analytics help you grow.</string>
+
+    <string name="manual_section_dashboard">1. Dashboard and Notifications</string>
+    <string name="manual_body_dashboard">The Dashboard is your control center. Tap any card to navigate. The notification bell shows real-time alerts for low stock or business updates. Pressing back from notifications safely returns you here.</string>
+
+    <string name="manual_section_inventory">2. Inventory and Smart Restocking</string>
+    <string name="manual_body_inventory"><b>Management:</b> Add or edit products with barcodes, prices, and costs.\n\n<b>Restock Recommendations (Prescriptive AI):</b> Not just a list—this module uses an optimization algorithm [ROP = (Avg Sales × Lead Time) + Safety Stock] to tell you exactly what to buy to avoid stockouts.</string>
+
+    <string name="manual_section_sales_assistant">3. AI Sales Assistant</string>
+    <string name="manual_body_sales_assistant">Found on the main page, this module provides high-level business health:\n\n<b>Financial Pulse (Descriptive):</b> Summarizes recent profitability using [Profit = Σ(Price - Cost)].\n\n<b>AI Consultant (Diagnostic):</b> Analyzes sales patterns to give you actionable advice on item pairings and business trends.</string>
+
+    <string name="manual_section_strategic_insights">4. Strategic Insights</string>
+    <string name="manual_body_strategic_insights">Advanced visualizations for long-term planning:\n\n<b>Revenue vs Profit:</b> Tracks your growth trends over time.\n\n<b>Peak Hours:</b> Diagnoses your busiest times to optimize staffing.\n\n<b>Demand Forecast (Predictive):</b> Projects future sales volume using a Weighted Moving Average algorithm.\n\n<b>Sales Volume:</b> Uses Pareto Distribution to identify the 20%% of products generating 80%% of your volume.</string>
+
+    <string name="manual_section_pos">5. Point of Sale (POS) and History</string>
+    <string name="manual_body_pos"><b>POS:</b> Scan barcodes to build a cart, calculate change, and generate receipts instantly.\n\n<b>Transactions:</b> A complete searchable history of every sale, including itemized breakdowns and profit data.</string>
+
+    <string name="manual_section_settings">6. Advanced Help and Settings</string>
+    <string name="manual_body_settings"><b>Advanced Help:</b> Look for the \'?\' icon in the corner of analytics pages. Toggle \"Show Advanced Details\" to see the logic and math behind our AI.\n\n<b>Settings:</b> Manage your security PIN, toggle alerts, and handle data resets.</string>
+
+    <string name="manual_footer">Our AI categories (Descriptive, Diagnostic, Predictive, Prescriptive) work together to ensure you always know what happened, why it happened, and what to do next.</string>
+
+    <string name="user_manual_content" translatable="false">DEPRECATED</string>
+</resources>

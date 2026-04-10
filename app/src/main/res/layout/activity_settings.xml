@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSettings"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="16dp"
+        app:title="Settings"
+        app:titleTextColor="#333333" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnChangePin"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="Change PIN / Password"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        app:icon="@android:drawable/ic_lock_lock"
+        app:iconTint="#333333" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginVertical="8dp"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchPinLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable PIN Login"
+        android:textColor="#333333"
+        android:padding="8dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginVertical="8dp"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchLowStockAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Low-stock Alert"
+        android:textColor="#333333"
+        android:padding="8dp"
+        android:checked="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginVertical="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUserManual"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="User Manual"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        app:icon="@android:drawable/ic_menu_help"
+        app:iconTint="#333333" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginVertical="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportData"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="Export Data to Excel"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        app:icon="@android:drawable/ic_menu_save"
+        app:iconTint="#333333" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnImportData"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="Import Data from Excel"
+        android:textAllCaps="false"
+        android:textColor="#333333"
+        app:icon="@android:drawable/ic_menu_upload"
+        app:iconTint="#333333" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginVertical="8dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDeleteData"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|center_vertical"
+        android:text="Delete All Data"
+        android:textAllCaps="false"
+        android:textColor="#FF0000"
+        app:icon="@android:drawable/ic_menu_delete"
+        app:iconTint="#FF0000" />
+
+</LinearLayout>
