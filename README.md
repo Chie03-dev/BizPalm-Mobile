@@ -6,7 +6,7 @@ BizPalm is an Android-based Point of Sale (POS) and Inventory Management System 
 
 ---
 
-## 🛠️ Technology Used
+## Technology Used
 
 **Language:** Kotlin & Java
 **Platform:** Android (runs locally on phone/tablet, no server required)
@@ -39,7 +39,7 @@ BizPalm is an Android-based Point of Sale (POS) and Inventory Management System 
 
 ---
 
-## ⚙️ The Process
+##The Process
 
 1. **Product Scan** — Customer presents an item → CameraX captures frames → ML Kit detects the barcode → the app queries the local database → the product is added to the cart.
 2. **Checkout** — Cashier confirms the cart → payment is validated → the transaction and its line items are saved to the local database → stock quantities are updated → a PDF receipt is generated.
