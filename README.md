@@ -6,29 +6,53 @@ BizPalm is a production-grade, local-first Android Point of Sale (POS) and Inven
 
 ## App Gallery
 
-### 1. Login Screen
-![Login Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/login.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/login.png" width="300" alt="Login Screen">
+  <br>
+  <b>1. Login Screen</b>
+</p>
 
-### 2. Dashboard Menu
-![Dashboard Menu](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/menu.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/menu.png" width="300" alt="Dashboard Menu">
+  <br>
+  <b>2. Dashboard Menu</b>
+</p>
 
-### 3. Inventory Management
-![Inventory Management](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/inventory.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/inventory.png" width="300" alt="Inventory Management">
+  <br>
+  <b>3. Inventory Management</b>
+</p>
 
-### 4. Barcode Scanner Camera
-![Barcode Scanner Camera](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/camera.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/camera.png" width="300" alt="Barcode Scanner Camera">
+  <br>
+  <b>4. Barcode Scanner Camera</b>
+</p>
 
-### 5. Camera Scan & Cart Integration
-![Camera Scan & Cart Integration](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/cameraaddtocart.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/cameraaddtocart.png" width="300" alt="Camera Scan and Cart">
+  <br>
+  <b>5. Camera Scan and Cart Integration</b>
+</p>
 
-### 6. Transaction History
-![Transaction History](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/transaction.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/transaction.png" width="300" alt="Transaction History">
+  <br>
+  <b>6. Transaction History</b>
+</p>
 
-### 7. Nearby Stores Map
-![Nearby Stores Map](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/map.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/map.png" width="300" alt="Nearby Stores Map">
+  <br>
+  <b>7. Nearby Stores Map</b>
+</p>
 
-### 8. Notifications & Alerts
-![Notifications & Alerts](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/notification.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/notification.png" width="300" alt="Notifications and Alerts">
+  <br>
+  <b>8. Notifications and Alerts</b>
+</p>
 
 ---
 
