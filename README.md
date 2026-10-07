@@ -1,62 +1,72 @@
 # BizPalm Mobile Inventory and POS System
 
-BizPalm is an Android-based Point of Sale and Inventory Management System built for small to medium-sized businesses, retail stores, sari-sari stores, pharmacies, and general merchandise shops. It operates entirely offline on any phone or tablet, requiring no expensive hardware or stable internet connection.
+BizPalm is a production-grade, local-first Android Point of Sale (POS) and Inventory Management System engineered for small to medium-sized retail shops, sari-sari stores, pharmacies, and general merchandise businesses. It operates 100% offline on mobile devices, ensuring zero latency, absolute data privacy, and complete independence from unstable internet connections or expensive cloud infrastructure.
 
 ---
 
-## App Screenshots
+## App Gallery
 
-### Login Screen
+### 1. Login Screen
 ![Login Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/login.png)
 
-### Registration Screen
-![Registration Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/register.png)
+### 2. Dashboard Menu
+![Dashboard Menu](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/menu.png)
 
-### Dashboard Screen
-![Dashboard Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/dashboard.png)
+### 3. Inventory Management
+![Inventory Management](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/inventory.png)
 
-### Inventory Screen
-![Inventory Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/inventory.png)
+### 4. Barcode Scanner Camera
+![Barcode Scanner Camera](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/camera.png)
 
-### Sales Analytics Screen
-![Sales Analytics Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/analytics.png)
+### 5. Camera Scan & Cart Integration
+![Camera Scan & Cart Integration](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/cameraaddtocart.png)
+
+### 6. Transaction History
+![Transaction History](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/transaction.png)
+
+### 7. Nearby Stores Map
+![Nearby Stores Map](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/map.png)
+
+### 8. Notifications & Alerts
+![Notifications & Alerts](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/notification.png)
 
 ---
 
 ## Core Features
 
-- **Barcode Scanning**: Scan products instantly using the device camera to add items to the sale without manual typing.
-- **Inventory Management**: Track stock levels, pricing, cost, and product categories with automated low stock alerts.
-- **Sales and Transactions**: Record sales transactions, calculate change automatically, and support cash, online payments, and customer loans.
-- **Analytics Dashboard**: View revenue trends, sales summaries, and predictive analytics powered by linear regression.
-- **Business Health Alerts**: Detect sales spikes and demand drops using statistical Z-score analysis.
-- **Restock Recommendations**: Predict when products will run out and calculate reorder quantities based on sales velocity.
-- **PDF Receipts and Reports**: Generate itemized receipts and sales summaries for printing or sharing.
-- **Fully Offline Architecture**: All data resides securely on the device database with no reliance on cloud servers.
+- **Instant Barcode Scanning**: Capture EAN-13, UPC-A, and QR barcodes instantly via CameraX and ML Kit without manual typing.
+- **Inventory Control**: Track stock quantities, unit costs, selling prices, categories, and low stock thresholds in real time.
+- **POS Checkout & Transactions**: Process cash payments, calculate change, handle online payments (GCash/Maya), and record customer loans (utang) with digital signatures.
+- **Statistical Analytics**: Forecast revenue trends using linear regression and detect sales anomalies using Z-score analysis.
+- **PDF Receipt Generation**: Build and share itemized sales receipts and business summaries locally via iText Core.
+- **Fully Offline Design**: Complete operational autonomy with zero cloud dependency.
 
 ---
 
-## Technology Stack
+## Technical Stack & Library Selection Rationale
 
-- **Languages**: Kotlin and Java
-- **Platform**: Android (API Level 26 and above)
-- **Architecture**: MVVM (Model-View-ViewModel) pattern
-- **Local Database**: Room Persistence Library (SQLite)
-- **Barcode Recognition**: Google ML Kit Barcode Scanning
-- **Camera Handling**: CameraX API
-- **Statistical Engine**: Apache Commons Math (linear regression and descriptive statistics)
-- **Data Visualization**: MPAndroidChart
-- **PDF Generation**: iText Core
+Choosing the right SDKs and libraries is critical for building a high-performance offline mobile system. Here is the technical breakdown of why each tool was chosen:
+
+- **Room Persistence Library (SQLite)**: Chosen over cloud backends to guarantee instant query speeds, ACID compliance, and complete offline availability. Room provides compile-time verification of SQL queries and seamless LiveData integration.
+- **Google ML Kit & CameraX**: Chosen for barcode scanning because CameraX abstracts away complex device-specific camera lifecycle boilerplate, while ML Kit runs high-performance barcode detection entirely on-device without external web service roundtrips.
+- **Apache Commons Math**: Selected for advanced retail analytics. Its statistical regression and descriptive statistics engines allow the app to compute local sales predictions and market basket analysis (Apriori bundling) without needing heavy backend machine learning frameworks.
+- **MPAndroidChart**: Integrated to render rich, responsive sales charts and revenue graphs directly on the analytics dashboard.
+- **iText Core**: Chosen for programmatic PDF generation to enable thermal printing and digital receipt sharing.
 
 ---
 
-## System Architecture
+## Developer Journal and Technical Insights
 
-BizPalm follows a local-first, offline-first design pattern. 
+Building BizPalm was an intensive journey into systems design, local data architecture, and hardware interoperability. Here are the core engineering lessons learned during development:
 
-1. **Data Layer**: Room database entities and data access objects (DAOs) manage local persistence. Repositories act as the single source of truth between the database and the UI.
-2. **ViewModel Layer**: ViewModels manage UI state and execute background computations using Kotlin coroutines.
-3. **UI Layer**: Activities and fragments observe view model states and render modern Material Design components.
+### 1. Embracing Local-First Architecture
+Designing for offline-first usage forces a strict separation of concerns. By relying on Room DAOs and Repositories as the single source of truth, the UI layer remains completely decoupled from storage details. If cloud synchronization is added in the future, it can be layered directly into the repository layer without touching a single ViewModel or UI component.
+
+### 2. Optimizing the Barcode Scanning Pipeline
+Bridging CameraX frame analysis with ML Kit required careful threading management. Running frame analysis on background executors (`Dispatchers.IO`) prevents blocking the main UI thread during continuous camera preview scanning, resulting in fluid 60fps barcode detection.
+
+### 3. Implementing On-Device Statistical Forecasting
+Instead of relying on remote cloud LLMs or heavy APIs for business intelligence, leveraging Apache Commons Math allowed the implementation of deterministic linear regression directly inside the ViewModel. Computing projected sales locally ensures that sensitive financial metrics never leave the device, maximizing user privacy and performance.
 
 ---
 
@@ -67,7 +77,7 @@ BizPalm follows a local-first, offline-first design pattern.
    git clone https://github.com/Chie03-dev/BizPalm-Mobile.git
    ```
 2. Open the project in Android Studio.
-3. Allow Gradle to sync and download dependencies.
+3. Allow Gradle to sync and download all dependencies.
 4. Connect an Android device or start an emulator running Android 8.0 (API 26) or higher.
 5. Click Run to build and install the application.
 
