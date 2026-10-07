@@ -1,4 +1,4 @@
-# BizPalm Mobile Inventory and POS System
+# Mobile Inventory and POS System
 
 BizPalm is a production-grade, local-first Android Point of Sale (POS) and Inventory Management System engineered for small to medium-sized retail shops, sari-sari stores, pharmacies, and general merchandise businesses. It operates 100% offline on mobile devices, ensuring zero latency, absolute data privacy, and complete independence from unstable internet connections or expensive cloud infrastructure.
 
