@@ -7,10 +7,10 @@ BizPalm is an Android-based Point of Sale and Inventory Management System built 
 ## App Screenshots
 
 ### Login Screen
-![Login Screen](assets/screenshots/login.png)
+![Login Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/login.png)
 
 ### Registration Screen
-![Registration Screen](assets/screenshots/register.png)
+![Registration Screen](https://raw.githubusercontent.com/Chie03-dev/BizPalm-Mobile/main/assets/screenshots/register.png)
 
 ---
 
