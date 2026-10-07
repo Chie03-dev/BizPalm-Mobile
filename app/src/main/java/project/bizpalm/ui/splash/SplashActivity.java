@@ -3,10 +3,10 @@ package project.bizpalm.ui.splash;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
-import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +20,8 @@ public class SplashActivity extends AppCompatActivity {
     private boolean isTransitioned = false;
     private static final String PREFS_NAME = "BizPalmSettings";
     private static final String KEY_PIN_LOGIN_ENABLED = "pin_login_enabled";
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private Runnable transitionRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +38,16 @@ public class SplashActivity extends AppCompatActivity {
         
         setContentView(R.layout.activity_splash);
 
-        VideoView videoView = findViewById(R.id.videoView);
         View container = findViewById(R.id.splashContainer);
 
-        // Path to the video file
-        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.logo);
-        videoView.setVideoURI(videoUri);
+        transitionRunnable = this::transitionToNext;
 
-        // Transition when video finishes
-        videoView.setOnCompletionListener(mp -> transitionToNext());
-
-        // Transition on error
-        videoView.setOnErrorListener((mp, what, extra) -> {
+        // Transition after 1.5 seconds or on click
+        handler.postDelayed(transitionRunnable, 1500);
+        container.setOnClickListener(v -> {
+            handler.removeCallbacks(transitionRunnable);
             transitionToNext();
-            return true;
         });
-
-        // Make it skippable: transition when clicking anywhere
-        View.OnClickListener skipListener = v -> transitionToNext();
-        container.setOnClickListener(skipListener);
-        videoView.setOnClickListener(skipListener);
-
-        videoView.start();
     }
 
     private void transitionToNext() {
@@ -70,17 +60,22 @@ public class SplashActivity extends AppCompatActivity {
 
             Intent intent;
             if (!pinLoginEnabled && sessionManager.isLoggedIn()) {
-                // If PIN Login is disabled and user was previously logged in, go straight to Dashboard
                 intent = new Intent(SplashActivity.this, DashboardActivity.class);
             } else {
-                // Otherwise, always go to LoginActivity (it will handle session auto-login if appropriate)
                 intent = new Intent(SplashActivity.this, LoginActivity.class);
             }
 
             startActivity(intent);
-            // Apply fade transition
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (transitionRunnable != null) {
+            handler.removeCallbacks(transitionRunnable);
         }
     }
 }

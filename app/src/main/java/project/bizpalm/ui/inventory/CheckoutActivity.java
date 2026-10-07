@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -57,6 +60,16 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars());
+            View contentLayout = findViewById(R.id.btnBackToMenu);
+            if (contentLayout != null && contentLayout.getParent() instanceof View) {
+                View parent = (View) contentLayout.getParent();
+                parent.setPadding(parent.getPaddingLeft(), parent.getPaddingTop(), parent.getPaddingRight(), insets.bottom + 32);
+            }
+            return windowInsets;
+        });
 
         db = AppDatabase.getDatabase(this);
         totalAmount = getIntent().getDoubleExtra("TOTAL_AMOUNT", 0.0);
