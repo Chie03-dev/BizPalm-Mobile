@@ -1,89 +1,71 @@
-# BizPalm   Mobile Inventory & POS System
+# BizPalm Mobile Inventory and POS System
 
-BizPalm is an Android-based Point of Sale (POS) and Inventory Management System built for small to medium-sized businesses   retail stores, sari-sari stores, pharmacies, and general merchandise shops. It runs entirely offline on a phone or tablet, so business owners don't need expensive hardware or a stable internet connection.
-
-**Front-end repo:** [BizPalm-Mobile](https://github.com/Chie03-dev/BizPalm-Mobile)
+BizPalm is an Android-based Point of Sale and Inventory Management System built for small to medium-sized businesses, retail stores, sari-sari stores, pharmacies, and general merchandise shops. It operates entirely offline on any phone or tablet, requiring no expensive hardware or stable internet connection.
 
 ---
 
-  Technology Used
+## App Screenshots
 
-**Language:** Kotlin & Java
-**Platform:** Android (runs locally on phone/tablet, no server required)
-**Architecture:** MVVM (Model-View-ViewModel)
-**Local Database:** Room Persistence Library (SQLite)
+### Login Screen
+![Login Screen](assets/screenshots/login.png)
 
-**Key libraries:**
-- **Google ML Kit**   on-device barcode scanning (EAN-13, UPC-A, QR, and more)
-- **CameraX**   camera handling for the scanner
-- **Apache Commons Math**   statistical engine for sales predictions and analytics
-- **MPAndroidChart**   charts and graphs for the analytics dashboard
-- **MediaPipe GenAI (Gemini Nano)**   on-device AI assistant, no cloud dependency
-- **iText Core**   PDF generation for receipts and reports
+### Registration Screen
+![Registration Screen](assets/screenshots/register.png)
 
 ---
 
-#Features
+## Core Features
 
--**Barcode Scanning**   scan products instantly to add them to a sale, no manual typing
--**Inventory Management**   track stock, pricing, cost, and category per product
--**Sales & Transactions**   record sales, calculate change, support cash.
--**Analytics Dashboard**   revenue trends and predictions powered by linear regression
--**Business Health Alerts**   detects sales spikes or drops using Z-score analysis
--**Growth Hacks**   suggests product bundles customers tend to buy together (market basket analysis)
--**Restock Tips**   predicts when a product will run out and suggests reorder quantities
--**Profit Insights**   ranks products by markup and profit margin
--**AI Business Consultant**   ask natural-language questions about your store, answered fully on-device
--**PDF Receipts & Reports**   generate and print/share itemized receipts and sales summaries
--**Fully Offline**   all data lives on the device, no internet needed
+- **Barcode Scanning**: Scan products instantly using the device camera to add items to the sale without manual typing.
+- **Inventory Management**: Track stock levels, pricing, cost, and product categories with automated low stock alerts.
+- **Sales and Transactions**: Record sales transactions, calculate change automatically, and support cash, online payments, and customer loans.
+- **Analytics Dashboard**: View revenue trends, sales summaries, and predictive analytics powered by linear regression.
+- **Business Health Alerts**: Detect sales spikes and demand drops using statistical Z-score analysis.
+- **Restock Recommendations**: Predict when products will run out and calculate reorder quantities based on sales velocity.
+- **PDF Receipts and Reports**: Generate itemized receipts and sales summaries for printing or sharing.
+- **Fully Offline Architecture**: All data resides securely on the device database with no reliance on cloud servers.
 
 ---
 
- The Process
+## Technology Stack
 
-1. **Product Scan**   Customer presents an item → CameraX captures frames → ML Kit detects the barcode → the app queries the local database → the product is added to the cart.
-2. **Checkout**   Cashier confirms the cart → payment is validated → the transaction and its line items are saved to the local database → stock quantities are updated → a PDF receipt is generated.
-3. **Analytics Refresh**   Whenever transaction data changes, the app automatically recalculates revenue predictions, health alerts, product bundles, and restock timing, then updates the dashboard charts.
-4. **AI Consultation**   The owner asks a question → the app builds a prompt using the store's own data → Gemini Nano runs the query locally → an answer appears in the chat UI.
-
-The app follows a **local-first, offline-first design**: everything works without internet, and no financial data ever leaves the device.
+- **Languages**: Kotlin and Java
+- **Platform**: Android (API Level 26 and above)
+- **Architecture**: MVVM (Model-View-ViewModel) pattern
+- **Local Database**: Room Persistence Library (SQLite)
+- **Barcode Recognition**: Google ML Kit Barcode Scanning
+- **Camera Handling**: CameraX API
+- **Statistical Engine**: Apache Commons Math (linear regression and descriptive statistics)
+- **Data Visualization**: MPAndroidChart
+- **PDF Generation**: iText Core
 
 ---
 
- How to Run
+## System Architecture
+
+BizPalm follows a local-first, offline-first design pattern. 
+
+1. **Data Layer**: Room database entities and data access objects (DAOs) manage local persistence. Repositories act as the single source of truth between the database and the UI.
+2. **ViewModel Layer**: ViewModels manage UI state and execute background computations using Kotlin coroutines.
+3. **UI Layer**: Activities and fragments observe view model states and render modern Material Design components.
+
+---
+
+## How to Run
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Chie03-dev/BizPalm-Mobile.git
    ```
-2. Open the project in **Android Studio**.
-3. Let Gradle sync and download dependencies.
-4. Connect an Android device (or start an emulator)   Android 8.0 (API 26) or higher recommended.
-5. Click **Run** to build and install the app.
-
-> Note: On-device AI (Gemini Nano) and camera-based barcode scanning require a physical device or an emulator with camera and ML support enabled. Some AI features may not work on all emulators.
+2. Open the project in Android Studio.
+3. Allow Gradle to sync and download dependencies.
+4. Connect an Android device or start an emulator running Android 8.0 (API 26) or higher.
+5. Click Run to build and install the application.
 
 ---
 
-  How to Improve
+## Contact
 
-If you'd like to build on BizPalm, here are some good starting points:
-
-- **Cloud sync/backup**   add an optional remote sync layer on top of the Repository classes without touching the ViewModels or UI (the architecture is already set up for this).
-- **Multi-user support**   add staff accounts and permission levels (owner vs. cashier).
-- **Better restock automation**   connect the restock suggestions directly to a supplier ordering flow.
-- **More payment integrations**   expand beyond Cash/GCash/PayMaya to other e-wallets or bank transfers.
-- **Bluetooth printer support**   expand PDF receipt generation to print directly to thermal printers.
-- **Testing**   add unit tests for ViewModels (regression, Z-score, and Apriori logic are all isolated and testable).
-- **UI/UX polish**   improve accessibility, add dark mode, or support tablet-optimized layouts.
-- **Localization**   add support for multiple languages/currencies beyond PHP.
-
-Contributions and forks are welcome   feel free to open an issue or pull request.
-
----
-
-  Contact
-
-**Developer:** Alchie O. Andilab
-**Email:** alchieandilab2003@gmail.com
-**GitHub:** [@Chie03-dev](https://github.com/Chie03-dev)
+- **Developer**: Alchie O. Andilab
+- **Email**: alchieandilab2003@gmail.com
+- **GitHub**: [@Chie03-dev](https://github.com/Chie03-dev)
