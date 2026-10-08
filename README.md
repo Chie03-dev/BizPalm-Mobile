@@ -71,11 +71,3 @@ Instead of relying on remote cloud LLMs or heavy APIs for business intelligence,
 3. Allow Gradle to sync and download all dependencies.
 4. Connect an Android device or start an emulator running Android 8.0 (API 26) or higher.
 5. Click Run to build and install the application.
-
----
-
-## Contact
-
-- **Developer**: Alchie O. Andilab
-- **Email**: alchieandilab2003@gmail.com
-- **GitHub**: [@Chie03-dev](https://github.com/Chie03-dev)
